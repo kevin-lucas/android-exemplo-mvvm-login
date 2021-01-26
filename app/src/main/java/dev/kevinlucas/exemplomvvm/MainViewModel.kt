@@ -1,27 +1,32 @@
 package dev.kevinlucas.exemplomvvm
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
 
-    private var mRepository = PersonRepository()
-
     private var mTextWelcome = MutableLiveData<String>()
-    var textWelcome = mTextWelcome
-
-    private var mLogin = MutableLiveData<Boolean>()
-    var login = mLogin
+    private var mPersonRepository = PersonRepository()
+    private var mToastNotification = MutableLiveData<String>()
 
     init {
-        mTextWelcome.value = "Hello World!"
+        mTextWelcome.value = "Bom dia!"
     }
 
-    fun login(login: String){
+    fun welcome(): LiveData<String> {
+        return mTextWelcome
+    }
 
-        val ret = mRepository.login(login)
-        mLogin.value = ret // mudei o valor
-        //mTextWelcome.value = "Olá Mundo!"
+    fun login(): LiveData<String> {
+        return mToastNotification
+    }
+
+    fun doLogin(email: String){
+        if(this.mPersonRepository.login(email))
+            mToastNotification.setValue("Success")
+        else
+            mToastNotification.setValue("Faleid")
     }
 
 }
