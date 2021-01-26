@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/ed_name"
+        android:id="@+id/editName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -29,12 +29,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textWelcome" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="@string/txt_bt_login"
-        app:layout_constraintStart_toStartOf="@+id/ed_name"
-        app:layout_constraintTop_toBottomOf="@+id/ed_name" />
+        app:layout_constraintStart_toStartOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
