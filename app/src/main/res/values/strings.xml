@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExemploMVVM</string>
+    <string name="txt_tv_title">TEMPLATE</string>
+    <string name="txt_bt_login">LOGIN</string>
+</resources>
